@@ -1,0 +1,16 @@
+{
+    "name": "Guiders-JS",
+    "version": "2.0.1",
+    "dependencies": {
+	   "jquery": "1.7.2"
+    },
+    "ignore": [
+        "**/.*",
+        "clock.gif",
+        "promo_gmail.png",
+        "guiders.jquery.json",
+        "README.html",
+        "README.md",
+        "**/*.txt"
+    ]
+}
