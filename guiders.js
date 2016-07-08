@@ -108,11 +108,11 @@
 
       var thisButtonName = thisButton.name.toLowerCase();
       if (thisButton.onclick) {
-        thisButtonElem.bind("click", thisButton.onclick);
+        thisButtonElem.on("click", thisButton.onclick);
       } else {
         switch (thisButtonName) {
           case guiders._closeButtonTitle.toLowerCase():
-            thisButtonElem.bind("click", function () {
+            thisButtonElem.on("click", function () {
               guiders.hideAll();
               if (myGuider.onClose) {
                 myGuider.onClose(myGuider, false /* close by button */);
@@ -120,12 +120,12 @@
             });
             break;
           case guiders._nextButtonTitle.toLowerCase():
-            thisButtonElem.bind("click", function () {
+            thisButtonElem.on("click", function () {
               !myGuider.elem.data('locked') && guiders.next();
             });
             break;
           case guiders._backButtonTitle.toLowerCase():
-            thisButtonElem.bind("click", function () {
+            thisButtonElem.on("click", function () {
               !myGuider.elem.data('locked') && guiders.prev();
             });
             break;
@@ -170,7 +170,7 @@
   };
 
   guiders._unWireEscape = function (myGuider) {
-    $(document).unbind("keydown");
+    $(document).off("keydown");
   };
 
   guiders._attach = function(myGuider) {
